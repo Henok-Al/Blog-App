@@ -4,7 +4,7 @@ import "./media-query.css";
 import Home from "./pages/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,useNavigate } from "react-router-dom";
 import Detail from "./pages/Detail";
 import AddEditBlog from "./pages/AddEditBlog";
 import NotFound from "./pages/NotFound";
@@ -13,11 +13,13 @@ import Auth from "./pages/Auth";
 import Header from "./components/Header";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
+import { signOut } from "firebase/auth";
 
 function App() {
   const [active, setActive] = useState("home");
   const [user, setUser] = useState(null);
 
+  const navigate = useNavigate();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -29,12 +31,21 @@ function App() {
     });
   }, []);
 
+  const handleLogout = () => {
+    signOut(auth).then(() => {
+      setUser(null);
+      setActive("login")
+      navigate("/auth")
+    })
+  }
+
   return (
     <div className="App">
       <Header 
       setActive={setActive}
       active={active}
       user={user}
+      handleLogout={handleLogout}
       />
       <ToastContainer position="top-center"/>
       <Routes>
