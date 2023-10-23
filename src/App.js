@@ -4,7 +4,7 @@ import "./media-query.css";
 import Home from "./pages/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Routes, Route,useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Detail from "./pages/Detail";
 import AddEditBlog from "./pages/AddEditBlog";
 import NotFound from "./pages/NotFound";
@@ -34,31 +34,40 @@ function App() {
   const handleLogout = () => {
     signOut(auth).then(() => {
       setUser(null);
-      setActive("login")
-      navigate("/auth")
-    })
-  }
+      setActive("login");
+      navigate("/auth");
+    });
+  };
 
   return (
     <div className="App">
-      <Header 
-      setActive={setActive}
-      active={active}
-      user={user}
-      handleLogout={handleLogout}
+      <Header
+        setActive={setActive}
+        active={active}
+        user={user}
+        handleLogout={handleLogout}
       />
-      <ToastContainer position="top-center"/>
+      <ToastContainer position="top-center" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/create" element={<AddEditBlog />} />
-        <Route path="/update/:id" element={<AddEditBlog />} />
+        <Route
+          path="/create"
+          element={user?.uid ? <AddEditBlog user={user} /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/update/:id"
+          element={user?.uid ? <AddEditBlog user={user} /> : <Navigate to="/" />}
+        />
         <Route path="/about" element={<About />} />
-        <Route path="/auth" element={<Auth setActive={setActive} setUser={setUser}/>} />
+        <Route
+          path="/auth"
+          element={<Auth setActive={setActive} setUser={setUser} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
-  )
+  );
 }
 
 export default App;
