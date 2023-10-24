@@ -41,11 +41,14 @@ const BlogSection = ({ blogs, user, handleDelete }) => {
                   size="2x"
                   onClick={() => handleDelete(item.id)}
                 />
+                <Link to={`/update/${item.id}`}>
                 <FontAwesome
                   name="edit"
                   style={{ cursor: "pointer" }}
                   size="2x"
                 />
+                </Link>
+                
               </div>
             )}
           </div>
