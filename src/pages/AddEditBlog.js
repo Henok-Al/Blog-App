@@ -4,7 +4,6 @@ import "@pathofdev/react-tag-input/build/index.css";
 import { db, storage } from "../firebase";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { upload } from "@testing-library/user-event/dist/upload";
 import {
   addDoc,
   doc,
@@ -83,6 +82,7 @@ const AddEditBlog = ({ user, setActive }) => {
 
   useEffect(() => {
     id && getBlogDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const getBlogDetail = async () => {
@@ -93,6 +93,7 @@ const AddEditBlog = ({ user, setActive }) => {
     }
     setActive(null);
   };
+
 
   console.log("form", form);
 

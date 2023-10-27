@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const NotFound = () => {
   return (
     <div>
-      Notfound
+      <img src="/images/404.jpg" alt="Page not found" style={{width: "100vh"}}/>
     </div>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;
