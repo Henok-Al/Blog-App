@@ -63,10 +63,12 @@ function App() {
             user?.uid ? <AddEditBlog user={user} setActive={setActive} /> : <Navigate to="/" />
           }
         />
+        {/* <Route path="/blogs" element={<Blogs  setActive={setActive} user={user}/>} /> */}
         <Route path="/about" element={<About />} />
         <Route
           path="/auth"
           element={<Auth setActive={setActive} setUser={setUser} />}
+          
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -75,3 +77,4 @@ function App() {
 }
 
 export default App;
+
