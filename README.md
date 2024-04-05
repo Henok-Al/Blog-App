@@ -38,11 +38,12 @@ This is a blog application built using React and Firebase. It allows users to si
 
 ### Clone the repository:
 
-
+```bash
 git clone https://github.com/your-username/react-firebase-blog.git
 
 
 cd react-firebase-blog
+```bash
 
 npm install
 
@@ -50,6 +51,7 @@ npm install
 Create a Firebase project on the Firebase console.
 Enable Authentication and Firestore (or Realtime Database) services.
 Copy Firebase configuration credentials and paste them into your application.
+```bash
 Run the application:
 bash
 Copy code
