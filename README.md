@@ -50,6 +50,7 @@ Create a Firebase project on the Firebase console.
 Enable Authentication and Firestore (or Realtime Database) services.
 Copy Firebase configuration credentials and paste them into your application.
 
+```bash
 npm start
 
 
