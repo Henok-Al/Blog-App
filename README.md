@@ -38,8 +38,9 @@ This is a blog application built using React and Firebase. It allows users to si
 
 ### Clone the repository:
 
-```bash
+
 git clone https://github.com/your-username/react-firebase-blog.git
+
 
 cd react-firebase-blog
 
