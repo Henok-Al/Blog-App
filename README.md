@@ -6,7 +6,7 @@ This is a blog application built using React and Firebase. It allows users to si
 ![image](https://github.com/Henok-Al/Blog-App/assets/143357641/ab14b357-4eeb-4cf0-8327-4c86f5a2338f)
 
 
-#Features
+##Features
 
 . ✅ Login and Register Page: Users can register for a new account or log in using existing credentials.
 
@@ -19,7 +19,8 @@ This is a blog application built using React and Firebase. It allows users to si
 . ✅ View Blog Details: Users can click on a blog to view its details, including the content and associated tags.
 
 
-#Library Used
+##Library Used
+
 . 🚀 React: A JavaScript library for building user interfaces.
 
 . 🚀 Firebase: A platform for building web and mobile applications, providing various services like authentication, database, and hosting.
@@ -35,7 +36,7 @@ This is a blog application built using React and Firebase. It allows users to si
 . 🚀 React Toastify: A React notification library for displaying toast notifications.
 
 
-## Getting Started
+### Getting Started
 
 ### Clone the repository:
 
