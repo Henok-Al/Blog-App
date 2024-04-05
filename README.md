@@ -7,6 +7,7 @@ This is a blog application built using React and Firebase. It allows users to si
 
 
 #Features
+
 . ✅ Login and Register Page: Users can register for a new account or log in using existing credentials.
 
 . ✅ Create, Edit, Delete Blog: Authenticated users can create new blogs, edit existing ones, and delete blogs.
